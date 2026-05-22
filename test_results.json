@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "question": "What is the project about?",
+    "answer": "The project is about developing a novel AI-driven pipeline for automated document analysis and knowledge extraction from scientific literature **(p. 2)**.\n\nThe primary objective is to reduce manual review time by 70% while maintaining extraction accuracy above 95%. Secondary objectives include building a reusable toolkit that can be adapted for multiple document domains including clinical trials, patent filings, and regulatory submissions **(p. 2)**.\n\nThe motivation behind this is that manual review of large document corpora is both time-consuming and error-prone. The project aims to automate significant portions of this process using recent advances in large language models, providing structured extraction with human-in-the-loop validation **(p. 2)**.",
+    "response_time_seconds": 17.28,
+    "outcome": "PASS",
+    "pass": true
+  },
+  {
+    "id": 2,
+    "question": "What tools does the Asklepios agent use?",
+    "answer": "The document excerpts provided do not contain any information about an \"Asklepios agent\" or the tools it uses.\n\nThe document describes a research project for developing an AI-driven pipeline for automated document analysis and knowledge extraction, but does not mention any agent or system called \"Asklepios.\"\n\nIf you have questions about the content that **is** covered in this synopsis — such as the methodology, expected outcomes, or risk assessment — I can answer those based on the available document content.",
+    "response_time_seconds": 4.29,
+    "outcome": "GROUNDED_REFUSAL",
+    "pass": true
+  },
+  {
+    "id": 3,
+    "question": "What were the findings of the PESTEL analysis?",
+    "answer": "The document excerpts provided do not contain any information about a PESTEL analysis or its findings. \n\nBased on the available content, the document covers:\n- Introduction and motivation for an AI-driven document analysis project (p. 2)\n- Methodology including data ingestion, AI-assisted extraction, and human validation (p. 4)\n- Expected outcomes and risk assessment (p. 5)\n\nNo PESTEL (Political, Economic, Social, Technological, Environmental, Legal) analysis is mentioned or discussed in these excerpts. If such an analysis exists, it may be in a section of the document that was not included in the provided content, such as a referenced Appendix B or another section not extracted here.",
+    "response_time_seconds": 4.54,
+    "outcome": "PASS",
+    "pass": true
+  },
+  {
+    "id": 4,
+    "question": "What ethical concerns are discussed in the synopsis?",
+    "answer": "The document does not contain any discussion of ethical concerns. \n\nWhile the synopsis covers the project's introduction, motivation, methodology (data ingestion, AI-assisted extraction, and human validation), expected outcomes, and risk assessment (pages 2-5), there is no section or passage dedicated to ethical considerations related to the AI-driven document analysis project.",
+    "response_time_seconds": 4.0,
+    "outcome": "GROUNDED_REFUSAL",
+    "pass": true
+  },
+  {
+    "id": 5,
+    "question": "What model powers the Asklepios agent?",
+    "answer": "The document excerpts provided do not contain information about what model powers the Asklepios agent. The document discusses an AI-driven pipeline for automated document analysis and mentions using an LLM (large language model) for extraction tasks (p. 4), but it does not specify which particular model is used, nor does it mention anything called \"Asklepios agent.\"\n\nTo answer your question, I would need document content that specifically addresses the Asklepios agent and its underlying model.",
+    "response_time_seconds": 5.02,
+    "outcome": "PASS",
+    "pass": true
+  },
+  {
+    "id": 6,
+    "question": "What was the biggest challenge the team faced?",
+    "answer": "The document does not contain information about challenges the team faced. \n\nThe synopsis describes a **proposed** research project with its objectives, methodology, and expected outcomes. It mentions potential **risks** such as:\n- Variability in PDF formatting across document sources\n- Hallucination in LLM outputs for ambiguous content\n- Delays in expert availability for validation phases\n\n(p. 5)\n\nHowever, these are anticipated future risks rather than challenges already encountered by a team. The document does not discuss actual implementation experiences or problems that have occurred.",
+    "response_time_seconds": 4.5,
+    "outcome": "PASS",
+    "pass": true
+  },
+  {
+    "id": 7,
+    "question": "How did the architecture change between Prototype I and II?",
+    "answer": "The document does not contain enough information to answer this question. \n\nWhile the excerpts describe a proposed research project for an AI-driven document analysis pipeline, including methodology phases and expected outcomes, there is **no mention of \"Prototype I\" or \"Prototype II\"** anywhere in the provided content.\n\nThe document covers:\n- Project introduction and motivation (p. 2)\n- Methodology phases: data ingestion, AI-assisted extraction, and human validation (p. 4)\n- Expected outcomes and risk assessment (p. 5)\n\nHowever, it does not discuss any prototypes or architectural changes between different versions of a system.\n\nIf information about prototypes exists, it would be in sections not included in these excerpts.",
+    "response_time_seconds": 5.95,
+    "outcome": "PASS",
+    "pass": true
+  },
+  {
+    "id": 8,
+    "question": "What is the hallucination rate mentioned in the results?",
+    "answer": "The document does not contain information about a hallucination rate in any results section. \n\nThe only mention of hallucination appears in the **risk assessment** on page 5, where it is listed as a **primary risk** — specifically \"hallucination in LLM outputs for ambiguous content\" — but no actual rate or measurement is provided.\n\nThe document describes expected outcomes and methodology but does not include results or performance metrics related to hallucination rates.",
+    "response_time_seconds": 5.29,
+    "outcome": "GROUNDED_REFUSAL",
+    "pass": true
+  },
+  {
+    "id": 9,
+    "question": "Who is the primary persona?",
+    "answer": "The document excerpts provided do not contain information about a \"primary persona.\" \n\nNo persona, user profile, or target audience role is explicitly identified or described in any of the sections included (Introduction, Motivation, Methodology, Expected Outcomes, or Risk Assessment).\n\nIf this information exists, it would likely be in sections not included in the excerpts provided, such as an appendix, stakeholder analysis section, or project charter details.",
+    "response_time_seconds": 15.12,
+    "outcome": "GROUNDED_REFUSAL",
+    "pass": true
+  },
+  {
+    "id": 10,
+    "question": "What does the author recommend in the conclusion?",
+    "answer": "The document excerpts provided do not contain a conclusion section. The content ends with Section 3.1 (Risk Assessment) on page 5, which discusses project risks and mitigation strategies, but no formal conclusion with recommendations is included in these excerpts.\n\nIf a conclusion exists in the full document, it was not included in the material provided to me. I cannot answer what the author recommends in the conclusion without access to that section.",
+    "response_time_seconds": 3.79,
+    "outcome": "GROUNDED_REFUSAL",
+    "pass": true
+  }
+]

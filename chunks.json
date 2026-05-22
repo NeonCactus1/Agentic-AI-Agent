@@ -1,0 +1,82 @@
+[
+  {
+    "id": 0,
+    "page": 1,
+    "section": "Preamble",
+    "content_type": "slide",
+    "text": "[Visual slide on page 1 — image or diagram content not extracted]",
+    "tokens": 16
+  },
+  {
+    "id": 1,
+    "page": 2,
+    "section": "1. Introduction",
+    "content_type": "text",
+    "text": "This document provides a comprehensive synopsis of the proposed research project.\nThe project aims to develop a novel AI-driven pipeline for automated document\nanalysis and knowledge extraction from scientific literature.\nBackground and motivation are described in the following subsections. The primary\nobjective is to reduce manual review time by 70% while maintaining extraction\naccuracy above 95%. Secondary objectives include building a reusable toolkit that\ncan be adapted for multiple document domains including clinical trials, patent\nfilings, and regulatory submissions.",
+    "tokens": 144
+  },
+  {
+    "id": 2,
+    "page": 2,
+    "section": "1.1 Motivation",
+    "content_type": "text",
+    "text": "Manual review of large document corpora is both time-consuming and error-prone.\nRecent advances in large language models have made it feasible to automate\nsignificant portions of this process. This project builds on those advances\nby providing structured extraction with human-in-the-loop validation.\nThe economic impact of such automation is estimated at 3-5 million EUR annually\nfor a mid-sized pharmaceutical organization.",
+    "tokens": 106
+  },
+  {
+    "id": 3,
+    "page": 3,
+    "section": "1.1 Motivation",
+    "content_type": "slide",
+    "text": "[Visual slide on page 3 — image or diagram content not extracted]",
+    "tokens": 16
+  },
+  {
+    "id": 4,
+    "page": 4,
+    "section": "2. Methodology",
+    "content_type": "text",
+    "text": "The methodology is divided into three main phases: data ingestion, AI-assisted\nextraction, and human validation. Each phase is described below.",
+    "tokens": 35
+  },
+  {
+    "id": 5,
+    "page": 4,
+    "section": "2.1 Data Ingestion",
+    "content_type": "text",
+    "text": "Source documents are ingested as PDFs. Pages are classified as text-heavy or\nvisual (slides/figures) using character-count heuristics on the raw extracted\ntext. Text pages undergo full extraction via pdfplumber; visual pages receive\na structured placeholder noting their position and type.\nSection headings following the pattern 'N. Title' or 'N.N Title' are detected\nusing regular expressions. Content is then chunked by section into segments\nof approximately 500 to 800 tokens to ensure compatibility with LLM context\nwindow constraints and maximize retrieval relevance in downstream RAG pipelines.",
+    "tokens": 150
+  },
+  {
+    "id": 6,
+    "page": 4,
+    "section": "2.2 AI-Assisted Extraction",
+    "content_type": "text",
+    "text": "Each chunk is passed to an LLM with a structured extraction prompt requesting\nJSON output following a predefined schema. The schema captures entities such as\nobjectives, methods, datasets, metrics, and conclusions. Chain-of-thought\nprompting is used to improve precision on ambiguous passages.",
+    "tokens": 73
+  },
+  {
+    "id": 7,
+    "page": 4,
+    "section": "2.3 Human Validation",
+    "content_type": "text",
+    "text": "Extracted data undergoes a two-stage review: automated consistency checks\nfollowed by domain-expert spot-checking. Discrepancies are flagged for\nresolution and fed back into the prompt tuning loop.",
+    "tokens": 49
+  },
+  {
+    "id": 8,
+    "page": 5,
+    "section": "3. Expected Outcomes",
+    "content_type": "text",
+    "text": "The project is expected to deliver the following outcomes by Q4 2026:\n- A production-ready ingestion pipeline capable of handling PDFs up to 300 pages.\n- A structured extraction module with configurable output schemas.\n- A validation dashboard for human reviewers.\n- A benchmark dataset of 500 annotated synopses for future model evaluation.",
+    "tokens": 85
+  },
+  {
+    "id": 9,
+    "page": 5,
+    "section": "3.1 Risk Assessment",
+    "content_type": "text",
+    "text": "Primary risks include variability in PDF formatting across document sources,\nhallucination in LLM outputs for ambiguous content, and delays in expert\navailability for validation phases. Mitigation strategies are described in\nthe project risk register (Appendix B).",
+    "tokens": 66
+  }
+]
