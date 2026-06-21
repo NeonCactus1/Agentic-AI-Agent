@@ -1,0 +1,8 @@
+chat-ui/node_modules
+chat-ui/.gitignore
+chunks.json
+test_results.json
+sample_synopsis.pdf
+__pycache__
+*.pyc
+.git

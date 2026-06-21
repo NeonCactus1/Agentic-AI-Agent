@@ -1,3 +1,7 @@
 pdfplumber
 anthropic
 openai
+fastapi
+uvicorn
+python-multipart
+pymupdf

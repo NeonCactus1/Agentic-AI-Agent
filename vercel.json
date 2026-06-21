@@ -1,0 +1,13 @@
+{
+  "buildCommand": "cd chat-ui && npm install && npm run build",
+  "outputDirectory": "chat-ui/dist",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 60
+    }
+  }
+}
