@@ -4,19 +4,25 @@ Self-contained: ingest logic is inlined here so no relative imports are needed.
 """
 
 import base64
+import json
 import os
 import re
 import tempfile
+from typing import AsyncGenerator
 
 import fitz  # pymupdf
 import pdfplumber
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from openai import OpenAI
+from pydantic import BaseModel
 
 # ─── Config ────────────────────────────────────────────────────────────────────
 OPENROUTER_BASE = "https://openrouter.ai/api/v1"
 VISION_MODEL    = "anthropic/claude-sonnet-4-5"
+CHAT_MODEL      = "anthropic/claude-sonnet-4-5"
+MAX_TOKENS      = 1024
 SLIDE_CHAR_THRESHOLD = 50
 TARGET_TOKENS_MIN    = 500
 TARGET_TOKENS_MAX    = 800
@@ -183,3 +189,32 @@ async def upload_pdf(file: UploadFile = File(...)):
         return chunks
     finally:
         os.unlink(path)
+
+
+class ChatRequest(BaseModel):
+    messages: list[dict]
+    system: str
+
+
+async def _stream(req: ChatRequest) -> AsyncGenerator[str, None]:
+    client = _client()
+    stream = client.chat.completions.create(
+        model=CHAT_MODEL,
+        max_tokens=MAX_TOKENS,
+        messages=[{"role": "system", "content": req.system}] + req.messages,
+        stream=True,
+    )
+    for chunk in stream:
+        delta = chunk.choices[0].delta.content or ""
+        if delta:
+            yield f"data: {json.dumps({'choices': [{'delta': {'content': delta}}]})}\n\n"
+    yield "data: [DONE]\n\n"
+
+
+@app.post("/api/chat")
+async def chat(req: ChatRequest):
+    return StreamingResponse(
+        _stream(req),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )

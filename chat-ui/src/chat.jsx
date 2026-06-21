@@ -16,10 +16,7 @@ const SAMPLE_CHUNKS = [
 const SAMPLE_DOC_NAME = "sample_synopsis.pdf";
 
 // ─── Config ────────────────────────────────────────────────────────────────────
-const MODEL = "anthropic/claude-sonnet-4-5";
-const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
-const MAX_TOKENS = 1024;
-const API_KEY = "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";
+const CHAT_URL = "/api/chat";
 
 const STARTERS = [
   "What is this project about?",
@@ -387,18 +384,10 @@ export default function ChatApp() {
     setError("");
 
     try {
-      const res = await fetch(OPENROUTER_URL, {
+      const res = await fetch(CHAT_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${API_KEY}`,
-        },
-        body: JSON.stringify({
-          model: MODEL,
-          max_tokens: MAX_TOKENS,
-          stream: true,
-          messages: [{ role: "system", content: systemPrompt }, ...nextMessages],
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: nextMessages, system: systemPrompt }),
       });
 
       if (!res.ok) {
