@@ -1,4 +1,5 @@
 {
+  "framework": null,
   "buildCommand": "cd chat-ui && npm install && npm run build",
   "outputDirectory": "chat-ui/dist",
   "rewrites": [
